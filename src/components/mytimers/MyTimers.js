@@ -7,9 +7,23 @@ import {View, Text, StyleSheet, TouchableOpacity, TouchableWithoutFeedback} from
 import {SwipeListView} from 'react-native-swipe-list-view';
 import TimerCard from './TimerCard';
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import Sound from 'react-native-sound';
 
 const MyTimers = ({editTimer, deleteTimer, timers}) => {
-  console.log("State in mytimers", timers)
+  // Enable playback in silence mode
+  Sound.setCategory('Playback');  
+
+  // Load the sound file 'default.mp3' from the app bundle
+  // See notes below about preloading sounds within initialization code below.
+  var sound = new Sound('default.mp3', Sound.MAIN_BUNDLE, (error) => {
+    if (error) {
+      console.log('failed to load the sound', error);
+      return;
+    }
+    // loaded successfully
+    console.log('duration in seconds: ' + sound.getDuration() + 'number of channels: ' + sound.getNumberOfChannels());
+  });
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -34,7 +48,7 @@ const MyTimers = ({editTimer, deleteTimer, timers}) => {
         <SwipeListView 
           disableRightSwipe
           data={timers}
-          renderItem={(data, rowMap) => <TimerCard item={data.item}/>}
+          renderItem={(data, rowMap) => <TimerCard sound={sound} item={data.item}/>}
           renderHiddenItem={ (data, rowMap) => (
             <View style={styles.rowBack}>
               <TouchableWithoutFeedback onPress={() => deleteTimer(data.item.id)}>

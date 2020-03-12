@@ -6,7 +6,7 @@ import {editTimer} from '../../actions/timerActions';
 import {View, Text, StyleSheet, TouchableOpacity, Image, TouchableWithoutFeedback} from 'react-native';
 import {displayTime} from '../../time-display';
 
-const TimerCard = ({item, editTimer}) => {
+const TimerCard = ({sound, item, editTimer}) => {
 
   return (
     <TouchableWithoutFeedback onPress={() => editTimer(item)}>
@@ -16,7 +16,7 @@ const TimerCard = ({item, editTimer}) => {
             <Text style={styles.timerTime}>{displayTime(item.sum)}</Text>
           </View>
           <View>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => sound.play()}>
               <Image style={styles.startBtn} source={require('../../assets/images/start_btn.png')}/>
             </TouchableOpacity>
           </View>
