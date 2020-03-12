@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="85px" height="85px" viewBox="0 0 85 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Timer</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Quick-timer" transform="translate(-266.000000, -1790.000000)">
+            <g id="Tab" transform="translate(0.000000, 1773.000000)">
+                <g id="Timer" transform="translate(269.000000, 19.000000)">
+                    <path d="M2.17230622,26.6666667 C-7.04843245,55.6750306 14.5545814,80 39.2737555,80 C63.9929296,80 78.6940453,58.2611955 78.6940453,39.604153 C78.6940453,20.9471106 62.6063889,1.15942029 39.2737555,1.15942029" id="Path-3" stroke="#291E13" stroke-width="5.79710145" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <circle id="Oval-Copy" fill="#291E13" cx="7.96940767" cy="16.8115942" r="2.89855072"></circle>
+                    <circle id="Oval-Copy-2" fill="#291E13" cx="16.0853497" cy="8.69565217" r="2.89855072"></circle>
+                    <circle id="Oval-Copy-3" fill="#291E13" cx="26.5201323" cy="2.89855072" r="2.89855072"></circle>
+                    <line x1="37.6795526" y1="39.604153" x2="10.8679584" y2="30.7246377" id="Line-6" stroke="#291E13" stroke-width="5.79710145" stroke-linecap="round" stroke-linejoin="round"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
