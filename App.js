@@ -8,10 +8,7 @@ import QuickTimer from './src/components/QuickTimer';
 import MyTimers from './src/components/mytimers/MyTimers';
 import EditTimer from './src/components/edittimer/EditTimer';
 
-
-
 const App = ({selectedTimer}) => {
-  
   const [tab, setTab] = useState(0);
 
   const switchTab = chosen => {

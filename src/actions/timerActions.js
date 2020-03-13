@@ -1,6 +1,4 @@
-import {FETCH_TIMERS, EDIT_TIMER, NEW_TIMER, SAVE_TIMER, DELETE_TIMER} from './types';
-
-
+import {FETCH_TIMERS, EDIT_TIMER, NEW_TIMER, SAVE_TIMER, DELETE_TIMER, RUN_TIMER, COUNTDOWN} from './types';
 
 export const fetchTimers = () => dispatch => dispatch({
     type: FETCH_TIMERS,
@@ -25,4 +23,14 @@ export const saveTimer = (timer) => dispatch => dispatch({
 export const deleteTimer = (timer) => dispatch => dispatch({
   type: DELETE_TIMER,
   payload: timer,
+});
+
+export const runTimer = (timer) => dispatch => dispatch({
+  type: RUN_TIMER,
+  payload: timer,
+});
+
+export const countdown = (sum) => dispatch => dispatch({
+  type: COUNTDOWN,
+  payload: sum,
 });
