@@ -1,4 +1,4 @@
-import {FETCH_TIMERS, EDIT_TIMER, NEW_TIMER, SAVE_TIMER, DELETE_TIMER, RUN_TIMER, COUNTDOWN} from '../actions/types';
+import {FETCH_TIMERS, EDIT_TIMER, NEW_TIMER, SAVE_TIMER, DELETE_TIMER, RUN_TIMER, PAUSE_TIMER, RESUME_TIMER, COUNTDOWN} from '../actions/types';
 
 const data = [
   {
@@ -97,10 +97,21 @@ export default function(state = initialState, action) {
         items: newItems.filter(item => item.id != action.payload),
       };
     case RUN_TIMER:
+
       return {
         ...state,
-        runningItem: action.payload,
+        runningItem: action.payload ? {...action.payload, isRunning: true} : undefined,
         timeLeft: action.payload ? action.payload.sum : [0, 0, 0],
+      };
+    case PAUSE_TIMER:
+      return {
+        ...state,
+        runningItem: {...state.runningItem, isRunning: false},
+      };
+    case RESUME_TIMER:
+      return {
+        ...state,
+        runningItem: {...state.runningItem, isRunning: true, timeLeft: action.payload},
       };
     case COUNTDOWN:
       return {

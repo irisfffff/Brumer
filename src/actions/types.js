@@ -4,4 +4,6 @@ export const NEW_TIMER = 'NEW_TIMER';
 export const SAVE_TIMER = 'SAVE_TIMER';
 export const DELETE_TIMER = 'DELETE_TIMER';
 export const RUN_TIMER = 'RUN_TIMER';
+export const PAUSE_TIMER = 'PAUSE_TIMER';
+export const RESUME_TIMER = 'RESUME_TIMER';
 export const COUNTDOWN = 'COUNTDOWN';

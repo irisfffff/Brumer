@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import {editTimer, runTimer} from '../../actions/timerActions';
+import {editTimer, runTimer, pauseTimer, resumeTimer} from '../../actions/timerActions';
 
 import {View, Text, StyleSheet, TouchableOpacity, Image, TouchableWithoutFeedback, Alert} from 'react-native';
 import {displayTime} from '../../time-display';
 
-const TimerCard = ({item, runningTimer, timeLeft, editTimer, runTimer}) => {
+const TimerCard = ({item, runningTimer, timeLeft, editTimer, runTimer, pauseTimer, resumeTimer}) => {
 
   const handleTimerRun = () => {
     if (runningTimer) {
@@ -26,9 +26,26 @@ const TimerCard = ({item, runningTimer, timeLeft, editTimer, runTimer}) => {
               <Text style={styles.timerTime}>{displayTime(item.sum)}</Text>}
           </View>
           <View>
-            <TouchableOpacity onPress={() => handleTimerRun()}>
-              <Image style={styles.startBtn} source={require('../../assets/images/start_btn.png')}/>
-            </TouchableOpacity>
+            { runningTimer && runningTimer.id == item.id ? 
+                <View style={styles.pauseContainer}>
+                  {
+                    runningTimer.isRunning ?
+                    <TouchableOpacity onPress={() => pauseTimer()}>
+                      <Text style={styles.pauseText}>{'Pause'}</Text>
+                    </TouchableOpacity> :
+                    <TouchableOpacity onPress={() => resumeTimer(timeLeft)}>
+                      <Text style={styles.pauseText}>{'Resume'}</Text>
+                    </TouchableOpacity>
+                  }
+                  
+                  <View style={styles.line}></View>
+                  <TouchableOpacity onPress={() => runTimer(undefined)}>
+                    <Text style={styles.pauseText}>{'Cancel'}</Text>
+                  </TouchableOpacity>
+                </View> : 
+                <TouchableOpacity onPress={() => handleTimerRun()}>
+                  <Image style={styles.startBtn} source={require('../../assets/images/start_btn.png')}/>
+                </TouchableOpacity>}
           </View>
       </View>
     </TouchableWithoutFeedback>
@@ -38,6 +55,8 @@ const TimerCard = ({item, runningTimer, timeLeft, editTimer, runTimer}) => {
 TimerCard.propTypes = {
   editTimer: PropTypes.func.isRequired,
   runTimer: PropTypes.func.isRequired,
+  pauseTimer: PropTypes.func.isRequired,
+  resumeTimer: PropTypes.func.isRequired,
   runningTimer: PropTypes.object,
 }
 
@@ -77,6 +96,28 @@ const styles = StyleSheet.create({
     height: 30,
     resizeMode: 'contain',
     marginRight: 18, 
+  },
+  pauseContainer: {
+    flexGrow: 1,
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    borderLeftColor: '#84372840',
+    borderLeftWidth: 0.5,
+    borderRadius: 1,
+  },
+  pauseText: {
+    color: '#843728',
+    textAlign: 'center',
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingTop: 6,
+    paddingBottom: 6,
+  },
+  line: {
+    height: 0,
+    borderColor: '#84372840',
+    borderWidth: 0.3,
+    borderRadius: 1,
   }
 });
 
@@ -85,4 +126,4 @@ const mapStateToProps = state => ({
   timeLeft: state.timers.timeLeft,
 });
 
-export default connect(mapStateToProps, {editTimer, runTimer})(TimerCard);
+export default connect(mapStateToProps, {editTimer, runTimer, pauseTimer, resumeTimer})(TimerCard);
