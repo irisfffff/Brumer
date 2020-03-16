@@ -59,7 +59,7 @@ TimerCard.propTypes = {
   resumeTimer: PropTypes.func.isRequired,
   runningTimer: PropTypes.object,
   timeLeft: PropTypes.array,
-}
+};
 
 const styles = StyleSheet.create({
   card: {

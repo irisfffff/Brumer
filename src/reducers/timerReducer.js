@@ -97,7 +97,6 @@ export default function(state = initialState, action) {
         items: newItems.filter(item => item.id != action.payload),
       };
     case RUN_TIMER:
-
       return {
         ...state,
         runningItem: action.payload ? {...action.payload, isRunning: true} : undefined,

@@ -85,7 +85,11 @@ const Countdown = ({runTimer, countdown, runningTimer}) => {
     // Play sound after timeout
     let playSound = [];
     if (runningTimer.isQuickTimer) {
-      playSound.push((runningTimer.sum[0] * 3600 + runningTimer.sum[1] * 60 + runningTimer.sum[2]) * 1000);
+      if (currentTimer && !currentTimer.timer.isRunning) {
+        playSound.push((runningTimer.timeLeft[0] * 3600 + runningTimer.timeLeft[1] * 60 + runningTimer.timeLeft[2]) * 1000)
+      } else {
+        playSound.push((runningTimer.sum[0] * 3600 + runningTimer.sum[1] * 60 + runningTimer.sum[2]) * 1000);
+      }
     } else {
       let prev = 0;
       let timePassed = 0;

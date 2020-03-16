@@ -37,7 +37,6 @@ export default class ClockFace extends PureComponent {
             );
           })
         }
-        {/* Why transform? */}
         <G transform={{translate: "0, 6"}}> 
           {
             range(12).map((h, i) => (

@@ -46,7 +46,7 @@ function getGradientId(index) {
   return `gradient${index}`;
 }
 
-export default class CircularSlider extends PureComponent {
+class CircularSlider extends PureComponent {
 
   static propTypes = {
     onUpdate: PropTypes.func.isRequired,
@@ -77,26 +77,24 @@ export default class CircularSlider extends PureComponent {
     circleCenterY: false,
   }
 
-  componentWillMount() {
-    this._endPanResponder = PanResponder.create({
-      onMoveShouldSetPanResponder: (evt, gestureState) => true,
-      onMoveShouldSetPanResponderCapture: (evt, gestureState) => true,
-      onPanResponderGrant: (evt, gestureState) => this.setCircleCenter(),
-      onPanResponderMove: (evt, { moveX, moveY }) => {
-        const { circleCenterX, circleCenterY } = this.state;
-        const { angleLength, startAngle, onUpdate } = this.props;
+  _endPanResponder = PanResponder.create({
+    onMoveShouldSetPanResponder: (evt, gestureState) => true,
+    onMoveShouldSetPanResponderCapture: (evt, gestureState) => true,
+    onPanResponderGrant: (evt, gestureState) => this.setCircleCenter(),
+    onPanResponderMove: (evt, { moveX, moveY }) => {
+      const { circleCenterX, circleCenterY } = this.state;
+      const { angleLength, startAngle, onUpdate } = this.props;
 
-        let newAngle = Math.atan2(moveY - circleCenterY, moveX - circleCenterX) + Math.PI/2;
-        let newAngleLength = (newAngle - startAngle) % (2 * Math.PI);
+      let newAngle = Math.atan2(moveY - circleCenterY, moveX - circleCenterX) + Math.PI/2;
+      let newAngleLength = (newAngle - startAngle) % (2 * Math.PI);
 
-        if (newAngleLength < 0) {
-          newAngleLength += 2 * Math.PI;
-        }
+      if (newAngleLength < 0) {
+        newAngleLength += 2 * Math.PI;
+      }
 
-        onUpdate({ startAngle, angleLength: newAngleLength });
-      },
-    });
-  }
+      onUpdate({ startAngle, angleLength: newAngleLength });
+    },
+  });
 
   onLayout = () => {
     this.setCircleCenter();
@@ -120,7 +118,6 @@ export default class CircularSlider extends PureComponent {
 
     const containerWidth = this.getContainerWidth();
 
-    const start = calculateArcCircle(0, segments, radius, startAngle, angleLength);
     const stop = calculateArcCircle(segments - 1, segments, radius, startAngle, angleLength);
 
     return (
@@ -206,3 +203,5 @@ export default class CircularSlider extends PureComponent {
     );
   }
 }
+
+export default CircularSlider;

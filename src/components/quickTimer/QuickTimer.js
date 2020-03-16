@@ -27,7 +27,7 @@ function roundAngleToFives(angle) {
 }
 
 function calculateAngleLength(sum) {
-  return Math.round((sum[1] * 60 + sum[2]) * (2 * Math.PI / (60 * 60)));
+  return (sum[1] * 60 + sum[2]) * (2 * Math.PI / (60 * 60));
 }
 
 class QuickTimer extends Component {
@@ -65,7 +65,7 @@ class QuickTimer extends Component {
             />}
           <CircularSlider
             startAngle={startAngle}
-            angleLength={angleLength}
+            angleLength={runningTimer && runningTimer.isQuickTimer ? calculateAngleLength(timeLeft) : angleLength}
             onUpdate={this.onUpdate}
             segments={5}
             strokeWidth={30}
@@ -88,9 +88,13 @@ class QuickTimer extends Component {
             <TouchableOpacity onPress={() => runTimer(undefined)}>
               <Image style={styles.btn} source={require('../../assets/images/cancel_btn.png')}/>
             </TouchableOpacity>
-            <TouchableOpacity>
-              <Image style={styles.btn} source={require('../../assets/images/pause_btn.png')}/>
-            </TouchableOpacity>
+            {runningTimer.isRunning ? 
+              <TouchableOpacity onPress={() => pauseTimer()}>
+                <Image style={styles.btn} source={require('../../assets/images/pause_btn.png')}/>
+              </TouchableOpacity> : 
+              <TouchableOpacity onPress={() => resumeTimer(timeLeft)}>
+                <Image style={styles.btn} source={require('../../assets/images/start_btn.png')}/>
+              </TouchableOpacity>}
           </View>
         }
       </View>
