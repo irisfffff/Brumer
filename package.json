@@ -10,9 +10,12 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "d3-interpolate": "^1.4.0",
+    "lodash.range": "^3.2.0",
     "react": "16.9.0",
     "react-native": "0.61.5",
     "react-native-sound": "^0.11.0",
+    "react-native-svg": "^12.0.3",
     "react-native-swipe-list-view": "^2.3.0",
     "react-native-vector-icons": "^6.6.0",
     "react-redux": "^7.2.0",

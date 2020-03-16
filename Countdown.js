@@ -84,20 +84,24 @@ const Countdown = ({runTimer, countdown, runningTimer}) => {
     
     // Play sound after timeout
     let playSound = [];
-    let prev = 0;
-    let timePassed = 0;
-    if (currentTimer && !currentTimer.timer.isRunning)
-      timePassed = (runningTimer.sum[0] * 3600 + runningTimer.sum[1] * 60 + runningTimer.sum[2]) - (runningTimer.timeLeft[0] * 3600 + runningTimer.timeLeft[1] * 60 + runningTimer.timeLeft[2]);
-    timePassed *= 1000;
-    
-    for (var i = 0; i < runningTimer.sequence.length; i++) {
-      let sum = prev;
-      sum += (runningTimer.sequence[i].time[0] * 3600 + runningTimer.sequence[i].time[1] * 60 + runningTimer.sequence[i].time[2]) * 1000;
-      if (sum >= timePassed)
-        playSound.push(sum - timePassed);
-      prev = sum;
-      if (runningTimer.sequence[i].ifPause) {
-        prev += (runningTimer.sequence[i].pauseTime[0] * 3600 + runningTimer.sequence[i].pauseTime[1] * 60 + runningTimer.sequence[i].pauseTime[2]) * 1000;
+    if (runningTimer.isQuickTimer) {
+      playSound.push((runningTimer.sum[0] * 3600 + runningTimer.sum[1] * 60 + runningTimer.sum[2]) * 1000);
+    } else {
+      let prev = 0;
+      let timePassed = 0;
+      if (currentTimer && !currentTimer.timer.isRunning)
+        timePassed = (runningTimer.sum[0] * 3600 + runningTimer.sum[1] * 60 + runningTimer.sum[2]) - (runningTimer.timeLeft[0] * 3600 + runningTimer.timeLeft[1] * 60 + runningTimer.timeLeft[2]);
+      timePassed *= 1000;
+      
+      for (var i = 0; i < runningTimer.sequence.length; i++) {
+        let sum = prev;
+        sum += (runningTimer.sequence[i].time[0] * 3600 + runningTimer.sequence[i].time[1] * 60 + runningTimer.sequence[i].time[2]) * 1000;
+        if (sum >= timePassed)
+          playSound.push(sum - timePassed);
+        prev = sum;
+        if (runningTimer.sequence[i].ifPause) {
+          prev += (runningTimer.sequence[i].pauseTime[0] * 3600 + runningTimer.sequence[i].pauseTime[1] * 60 + runningTimer.sequence[i].pauseTime[2]) * 1000;
+        }
       }
     }
     

@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   addBtn: {
-    backgroundColor: '#c8701860',
+    backgroundColor: '#c8701880',
     padding: 12,
     borderRadius: 6,
   },

@@ -13,7 +13,7 @@ const TimerCard = ({item, runningTimer, timeLeft, editTimer, runTimer, pauseTime
       Alert.alert('Timer Running', 'Sorry, you can have only one running timer at a time :(', {text: 'OK'});
       return;
     }
-    runTimer(item);
+    runTimer({...item, isQuickTimer: false});
   }
 
   return (
@@ -21,12 +21,12 @@ const TimerCard = ({item, runningTimer, timeLeft, editTimer, runTimer, pauseTime
       <View style={styles.card}>
           <View style={styles.info}>
             <Text style={styles.timerTitle}>{item.name}</Text>
-            { runningTimer && runningTimer.id == item.id ? 
+            { runningTimer && !runningTimer.isQuickTimer && runningTimer.id == item.id ? 
               <Text style={styles.timerTime}>{displayTime(timeLeft)}</Text> : 
               <Text style={styles.timerTime}>{displayTime(item.sum)}</Text>}
           </View>
           <View>
-            { runningTimer && runningTimer.id == item.id ? 
+            { runningTimer && !runningTimer.isQuickTimer && runningTimer.id == item.id ? 
                 <View style={styles.pauseContainer}>
                   {
                     runningTimer.isRunning ?
@@ -58,6 +58,7 @@ TimerCard.propTypes = {
   pauseTimer: PropTypes.func.isRequired,
   resumeTimer: PropTypes.func.isRequired,
   runningTimer: PropTypes.object,
+  timeLeft: PropTypes.array,
 }
 
 const styles = StyleSheet.create({
