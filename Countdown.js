@@ -80,7 +80,7 @@ const Countdown = ({runTimer, countdown, runningTimer}) => {
       }
       
       countdown(sum);
-    }, 1000);
+    }, 998); // There is often some delay
     
     // Play sound after timeout
     let playSound = [];

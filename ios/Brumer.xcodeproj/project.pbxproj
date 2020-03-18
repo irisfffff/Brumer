@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* BrumerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* BrumerTests.m */; };
 		03253E0824200EF500C243A4 /* Brumer_icon_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03253E0724200EF500C243A4 /* Brumer_icon_3x.png */; };
@@ -711,6 +710,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brumer.app/Brumer";
+				FRAMEWORK_SEARCH_PATHS = (
+				);
 			};
 			name = Debug;
 		};
@@ -733,6 +734,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brumer.app/Brumer";
+				FRAMEWORK_SEARCH_PATHS = (
+				);
 			};
 			name = Release;
 		};
@@ -754,6 +757,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.Brumer;
 				PRODUCT_NAME = Brumer;
 				VERSIONING_SYSTEM = "apple-generic";
+				FRAMEWORK_SEARCH_PATHS = (
+				);
 			};
 			name = Debug;
 		};
@@ -774,6 +779,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.Brumer;
 				PRODUCT_NAME = Brumer;
 				VERSIONING_SYSTEM = "apple-generic";
+				FRAMEWORK_SEARCH_PATHS = (
+				);
 			};
 			name = Release;
 		};
@@ -803,6 +810,8 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				FRAMEWORK_SEARCH_PATHS = (
+				);
 			};
 			name = Debug;
 		};
@@ -832,6 +841,8 @@
 				SDKROOT = appletvos;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.2;
+				FRAMEWORK_SEARCH_PATHS = (
+				);
 			};
 			name = Release;
 		};
@@ -860,6 +871,8 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brumer-tvOS.app/Brumer-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				FRAMEWORK_SEARCH_PATHS = (
+				);
 			};
 			name = Debug;
 		};
@@ -888,6 +901,8 @@
 				SDKROOT = appletvos;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Brumer-tvOS.app/Brumer-tvOS";
 				TVOS_DEPLOYMENT_TARGET = 10.1;
+				FRAMEWORK_SEARCH_PATHS = (
+				);
 			};
 			name = Release;
 		};
