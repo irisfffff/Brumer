@@ -29,13 +29,17 @@ class TimerSection extends Component {
   };
 
   timeValidation = text => { 
+    // Only accept number input
+    if (!(/^\d+$/.test(text)))
+      return false;
     if (/^0+$/.test(text))
       return true;
     while(text[0] == '0')
       text = text.slice(1)
+    // Maximum 99
     if (text.length > 2)
       return false;
-    return /^\d+$/.test(text) ? true : false;
+    return true;
   };
 
   getSectionValue = () => {
@@ -78,6 +82,7 @@ class TimerSection extends Component {
                     this.minutesInput.focus();
                 }
               }}
+              selectTextOnFocus={true}
               value={pad(this.state.time[0])}
             />
             <Text style={this.isUnset(...this.state.time) ? styles.timeUnset : styles.time}>:</Text>
@@ -97,6 +102,7 @@ class TimerSection extends Component {
                     this.secondsInput.focus();
                 }
               }}
+              selectTextOnFocus={true}
               value={pad(this.state.time[1])}
             />
             <Text style={this.isUnset(...this.state.time) ? styles.timeUnset : styles.time}>:</Text>
@@ -116,6 +122,7 @@ class TimerSection extends Component {
                   this.setState({time: newTime});
                 }
               }}
+              selectTextOnFocus={true}
               value={pad(this.state.time[2])}
             />
           </View>
@@ -143,6 +150,7 @@ class TimerSection extends Component {
                       this.pauseMinutesInput.focus();
                   }
                 }}
+                selectTextOnFocus={true}
                 value={pad(this.state.pauseTime[0])}
               />
               <Text style={this.isUnset(...this.state.pauseTime) ? styles.pauseTextUnset : styles.pauseText}>:</Text>
@@ -162,6 +170,7 @@ class TimerSection extends Component {
                       this.pauseSecondsInput.focus();
                   }
                 }}
+                selectTextOnFocus={true}
                 value={pad(this.state.pauseTime[1])}
               />
               <Text style={this.isUnset(...this.state.pauseTime) ? styles.pauseTextUnset : styles.pauseText}>:</Text>
@@ -181,6 +190,7 @@ class TimerSection extends Component {
                     this.setState({pauseTime: newTime});
                   }
                 }}
+                selectTextOnFocus={true}
                 value={pad(this.state.pauseTime[2])}
               />
             </View>
