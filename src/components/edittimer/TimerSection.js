@@ -58,6 +58,7 @@ class TimerSection extends Component {
           <TextInput
             style={styles.title}
             placeholder="Enter title"
+            placeholderTextColor="#c7c7cd"
             onChangeText={text => {
               if (this.titleValidation(text))
                 this.setState({title: text})}}
@@ -214,6 +215,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     marginBottom: 4,
+    color: '#000',
   },
   timeContainer: {
     flexDirection: 'row',
@@ -221,6 +223,7 @@ const styles = StyleSheet.create({
   time: {
     fontSize: 26,
     marginBottom: 4,
+    color: '#000',
   },
   timeUnset: {
     fontSize: 26,
@@ -234,6 +237,7 @@ const styles = StyleSheet.create({
   pauseText: {
     fontSize: 20,
     fontWeight: '200',
+    color: '#000',
   },
   pauseTextUnset: {
     fontSize: 20,

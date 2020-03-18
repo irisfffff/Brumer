@@ -110,6 +110,7 @@ class EditTimer extends Component {
           <TouchableWithoutFeedback onPress={() => this.props.editTimer(undefined)}><Icon name="angle-left" size={32}/></TouchableWithoutFeedback>
           <TextInput style={styles.headerText}
             placeholder="Enter name"
+            placeholderTextColor="#c7c7cd"
             onChangeText={text => {
               if (this.nameValidation(text))
                 this.setState({name: text})}}
@@ -162,6 +163,7 @@ const styles = StyleSheet.create({
     marginLeft: 16,
     fontSize: 30,
     fontWeight: 'bold',
+    color: '#000',
   },
   sum: {
     fontSize: 24,
