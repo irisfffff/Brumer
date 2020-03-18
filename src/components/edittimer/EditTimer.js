@@ -169,13 +169,13 @@ const styles = StyleSheet.create({
   },
   addBtn: {
     backgroundColor: '#c8701880',
-    padding: 10,
+    padding: 12,
     borderRadius: 6,
     marginTop: 16,
   },
   saveBtn: {
     backgroundColor: '#84372880',
-    padding: 10,
+    padding: 12,
     borderRadius: 6,
     marginTop: 16,
   },

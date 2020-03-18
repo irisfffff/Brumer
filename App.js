@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fcfcfc',
+    marginBottom: 10,
   },
   quickTimer: {
     flexGrow: 1,

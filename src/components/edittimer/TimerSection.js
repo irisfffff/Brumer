@@ -189,10 +189,10 @@ class TimerSection extends Component {
         </View>
         <View style={styles.operation}>
           <TouchableOpacity onPress={() => this.props.handleCopy(this.props.index)}>
-            <Icon style={styles.icon} name="clone" size={20}/>
+            <Icon style={styles.icon} name="clone" size={22}/>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => this.props.handleDelete(this.props.index)}>
-            <Icon style={styles.icon} name="trash" size={22} color="#843728"/>
+            <Icon style={styles.icon} name="trash" size={24} color="#843728"/>
           </TouchableOpacity>
         </View>
       </View>
@@ -212,18 +212,18 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   title: {
-    fontSize: 20,
+    fontSize: 22,
     marginBottom: 4,
   },
   timeContainer: {
     flexDirection: 'row',
   },
   time: {
-    fontSize: 24,
+    fontSize: 26,
     marginBottom: 4,
   },
   timeUnset: {
-    fontSize: 24,
+    fontSize: 26,
     marginBottom: 4,
     color: '#c7c7cd',
   },
@@ -232,16 +232,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   pauseText: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '200',
   },
   pauseTextUnset: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: '200',
     color: '#c7c7cd',
   },
   switch: {
-    transform: [{ scaleX: .65 }, { scaleY: .65 }],
+    transform: [{ scaleX: .7 }, { scaleY: .7 }],
   },
   operation: {
     flexDirection: 'row',

@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: '#fff',
     flex: 1,
-    height: 70,
+    height: 80,
     borderRadius: 8,
     marginBottom: 16,
     flexDirection: 'row',
@@ -85,16 +85,16 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   timerTitle: {
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: '200',
     marginBottom: 5,
   },
   timerTime: {
-    fontSize: 22,
+    fontSize: 24,
   },
   startBtn: {
-    width: 30,
-    height: 30,
+    width: 36,
+    height: 36,
     resizeMode: 'contain',
     marginRight: 18, 
   },
@@ -111,8 +111,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     paddingLeft: 20,
     paddingRight: 20,
-    paddingTop: 6,
-    paddingBottom: 6,
+    paddingTop: 10,
+    paddingBottom: 10,
   },
   line: {
     height: 0,

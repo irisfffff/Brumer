@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* BrumerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* BrumerTests.m */; };
+		03253E0824200EF500C243A4 /* Brumer_icon_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03253E0724200EF500C243A4 /* Brumer_icon_3x.png */; };
 		034EEA24241AE8E500F7427D /* default.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 034EEA22241AE8E500F7427D /* default.mp3 */; };
 		034EEA25241AE8E500F7427D /* crying-baby.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 034EEA23241AE8E500F7427D /* crying-baby.mp3 */; };
 		03776B0A241AE482006C4FBF /* notification.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 03776B09241AE482006C4FBF /* notification.mp3 */; };
@@ -47,6 +48,7 @@
 		00E356EE1AD99517003FC87E /* BrumerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrumerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* BrumerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrumerTests.m; sourceTree = "<group>"; };
+		03253E0724200EF500C243A4 /* Brumer_icon_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Brumer_icon_3x.png; path = ../src/assets/images/Brumer_icon_3x.png; sourceTree = "<group>"; };
 		034EEA22241AE8E500F7427D /* default.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = default.mp3; path = ../src/assets/audios/default.mp3; sourceTree = "<group>"; };
 		034EEA23241AE8E500F7427D /* crying-baby.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "crying-baby.mp3"; path = "../src/assets/audios/crying-baby.mp3"; sourceTree = "<group>"; };
 		03776B09241AE482006C4FBF /* notification.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = notification.mp3; path = ../src/assets/audios/notification.mp3; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
+				03253E0724200EF500C243A4 /* Brumer_icon_3x.png */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
@@ -335,18 +338,24 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 940;
-				ORGANIZATIONNAME = Facebook;
+				ORGANIZATIONNAME = "Iris Fang";
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = WZQ74326ZC;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						DevelopmentTeam = WZQ74326ZC;
 					};
 					2D02E47A1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = WZQ74326ZC;
 						ProvisioningStyle = Automatic;
 					};
 					2D02E48F1E0B4A5D006451C7 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = WZQ74326ZC;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 2D02E47A1E0B4A5D006451C7;
 					};
@@ -386,6 +395,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03253E0824200EF500C243A4 /* Brumer_icon_3x.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				034EEA24241AE8E500F7427D /* default.mp3 in Resources */,
@@ -684,6 +694,8 @@
 			baseConfigurationReference = E291DE65666A8D1F707BA39B /* Pods-BrumerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				DEVELOPMENT_TEAM = WZQ74326ZC;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -707,7 +719,9 @@
 			baseConfigurationReference = AE107C3DCCFA9FEE93E94DDD /* Pods-BrumerTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = WZQ74326ZC;
 				INFOPLIST_FILE = BrumerTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -726,9 +740,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 625F8BF7D23630AEB3365762 /* Pods-Brumer.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
+				DEVELOPMENT_TEAM = WZQ74326ZC;
 				INFOPLIST_FILE = Brumer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -736,7 +751,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.Brumer;
 				PRODUCT_NAME = Brumer;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -746,8 +761,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 64764E34CA98B4584D671389 /* Pods-Brumer.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WZQ74326ZC;
 				INFOPLIST_FILE = Brumer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
@@ -755,7 +771,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.reactjs.native.Brumer;
 				PRODUCT_NAME = Brumer;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -772,6 +788,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = WZQ74326ZC;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Brumer-tvOS/Info.plist";
@@ -801,6 +818,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = WZQ74326ZC;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Brumer-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -827,6 +845,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = WZQ74326ZC;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Brumer-tvOSTests/Info.plist";
@@ -855,6 +874,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = WZQ74326ZC;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Brumer-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
